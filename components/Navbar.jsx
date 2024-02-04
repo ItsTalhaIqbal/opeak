@@ -7,7 +7,7 @@ import NavItem from './Navitem'
 
 const Navbar = () => {
   return (
-    <nav className='w-full flex bg-color p-4 '>
+    <nav className='w-full flex bg-color p-4 fixed '>
       <div className='w-[200px] h-13  mt-3  lg:ml-[100px] sm:ml-0 mx-0'>
 
         <Link href='/'>
