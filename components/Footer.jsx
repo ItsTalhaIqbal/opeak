@@ -40,31 +40,31 @@ const Footer = () => {
           </div>
 
 
-         
+
           <div className='w-full h-[300px] flex flex-col px-10 '>
-  <div className='b-bottum text-white b h-[300px]'>
-    <h2 className='flex items-center justify-between gap-3 pt-[30px] text-white text-2xl font-semibold'>
-      ADDRESS <TfiLocationPin />
-    </h2>
-    <p>20550 TOWNSEN Blvd
-      Bldg, Unit 201
-      Humbel Texas 77338
-      United States
-    </p>
-  </div>
-  <div className='b-bottum h-[300px]'>
-    <h2 className='flex items-center justify-between gap-3 pt-[30px] text-white text-2xl font-semibold'>
-      PHONE <LiaMobileAltSolid />
-    </h2>
-    <p className='text-white'>(888)445-9675</p>
-  </div>
-  <div className='b-bottum h-[300px]'>
-    <h2 className='flex items-center justify-between gap-3 pt-[30px] text-white text-2xl font-semibold'>
-      EMAIL <MdEmail />
-    </h2>
-    <p className='text-white'>contact@eet.auction</p>
-  </div>
-</div>
+            <div className='b-bottum text-white b h-[300px]'>
+              <h2 className='flex items-center justify-between gap-3 pt-[30px] text-white text-2xl font-semibold'>
+                ADDRESS <TfiLocationPin />
+              </h2>
+              <p>20550 TOWNSEN Blvd
+                Bldg, Unit 201
+                Humbel Texas 77338
+                United States
+              </p>
+            </div>
+            <div className='b-bottum h-[300px]'>
+              <h2 className='flex items-center justify-between gap-3 pt-[30px] text-white text-2xl font-semibold'>
+                PHONE <LiaMobileAltSolid />
+              </h2>
+              <p className='text-white'>(888)445-9675</p>
+            </div>
+            <div className='b-bottum h-[300px]'>
+              <h2 className='flex items-center justify-between gap-3 pt-[30px] text-white text-2xl font-semibold'>
+                EMAIL <MdEmail />
+              </h2>
+              <p className='text-white'>contact@eet.auction</p>
+            </div>
+          </div>
         </div>
 
         <div className=' h-auto'>
@@ -87,42 +87,42 @@ const Footer = () => {
         <div className='w-full h-[150px] b-color flex justify-center items-center '>
 
           <ul className='flex justify-center items-center w-full  h-[80px] gap-[70px] bg'>
-            <li className=' h-full w-20 rounded-full bg-color '>
+            <li className=' h-full w-20 rounded-full bg-color bg'>
               <Link href='#'>
                 <Image
                   src='/tiktok.png'
-                  height={20}  // Set a specific height, adjust accordingly
-                  width={20}   // Let the width adjust based on the aspect ratio
+                  height={20}  
+                  width={20}   
                   className='h-[50px] w-[50px] ml-4 mt-3'
                 />
               </Link>
             </li>
-            <li className=' h-full w-20 rounded-full  bg-color'>
+            <li className=' h-full w-20 rounded-full  bg-color bg'>
               <Link href='#'>
                 <Image
                   src='/instagram.png'
-                  height={20}  // Set a specific height, adjust accordingly
-                  width={50}   // Let the width adjust based on the aspect ratio
+                  height={20} 
+                  width={50}  
                   className='h-15 w-15 ml-4 mt-3'
                 />
               </Link>
             </li>
-            <li className=' h-full w-20 rounded-full  bg-color'>
+            <li className=' h-full w-20 rounded-full  bg-color bg'>
               <Link href='#'>
                 <Image
                   src='/pintrest.png'
-                  height={20}  // Set a specific height, adjust accordingly
-                  width={50}   // Let the width adjust based on the aspect ratio
+                  height={20}  
+                  width={50}   
                   className='h-15 w-15 ml-4 mt-2'
                 />
               </Link>
             </li>
-            <li className=' h-full w-20 rounded-full  bg-color'>
+            <li className=' h-full w-20 rounded-full  bg-color bg'>
               <Link href='#'>
                 <Image
                   src='/youtube.png'
-                  height={20}  // Set a specific height, adjust accordingly
-                  width={50}   // Let the width adjust based on the aspect ratio
+                  height={20}  
+                  width={50}   
                   className='h-15 w-15 ml-3 mt-3'
                 />
               </Link>

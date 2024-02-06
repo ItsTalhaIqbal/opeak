@@ -37,7 +37,7 @@ function YourFormComponent() {
         onChange={(e) => setDescription(e.target.value)}
         className="w-[400px] h-[100px] ml-9 mt-4 mr-3 resize-none border border-gray-300 rounded-md p-2 self-end focus:outline-none focus:border-blue-500 xl:w-[500px]"
       />
-      <Button type="button" onClick={handleSubmit} className="mt-2 b-color">
+      <Button type="button" onClick={handleSubmit} className="mt-2 ml-10 b-color">
         Submit
       </Button>
     </>

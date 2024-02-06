@@ -74,6 +74,11 @@
     @apply bg-background text-foreground;
   }
 }
+*{
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
 body{
   height: 100%;
   width: 100%;
@@ -97,14 +102,13 @@ body{
 .b-color button:hover{
   background-color: #24B9D7;
 }
-.ul a:hover{
+.ul Button:hover{
   color:#24B9D7 ;
+  background: none;
 }
 .mapouter{
   padding-left: 100px;
   padding-right: 100px;
-
-  position:relative;
   text-align:right;
   height:400px;
   width:100%;
@@ -129,4 +133,11 @@ body{
 .l-div{
   border: none;
   border-bottom: 1px solid gray;
+}
+.button{
+  background: none;
+}
+.button :hover{
+  background: none;
+  color: #24B9D7;
 }
