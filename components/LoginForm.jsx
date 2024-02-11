@@ -1,27 +1,29 @@
-import React from 'react'
+"use Client"
 import { Input } from './ui/input'
 import Link from 'next/link'
-import { Button } from './ui/button'
+import { useState } from 'react';
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
 
-const LoginForm = ({ isVisible, onClose }) => {
-  const handleClick = (e) => {
-    if (e.target.id === "login") {
- onClose()
-  }
-    }
-   
+function LoginForm() {
+  const [show, setShow] = useState(false);
 
-  if (!isVisible) return null;
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   return (
-
-    <div className='fixed inset-0 flex justify-center items-center bg-black bg-opacity-25 backdrop-blur-sm' id="login" onClick={handleClick}>
-  <div className='bg-white rounded-lg p-4'>
-    <div className='flex justify-end'> 
-      <Button onClick={() => onClose(false)} className='button text-black font-bold'>
-        X
+    <>
+      <Button className='bg-color' onClick={handleShow}>
+        Login
       </Button>
-    </div>
-    <div className='w-[600px] h-[400px] flex flex-col justify-center items-center'>
+
+      <Modal show={show} onHide={handleClose}>
+      <Modal.Header closeButton></Modal.Header>
+                <Modal.Body>
+      <div className=' inset-0 flex justify-center items-center bg-black bg-opacity-25 backdrop-blur-sm ' >
+  <div className='bg-white rounded-lg p-4 '>
+    
+    <div className='w-[450px]  flex flex-col justify-center items-center'>
       <Input className='mb-4 w-64' placeholder='Username' />
       <Input className='mb-4 w-64' type='password' placeholder='Password' />
       <Link href='#' className='text-color2 mb-4'>Forgot your password?</Link>
@@ -29,9 +31,9 @@ const LoginForm = ({ isVisible, onClose }) => {
       <Link href='#' className='text-color2 text-center'>No account? Create one here</Link>
     </div>
   </div>
-</div>
-
-  )
+</div></Modal.Body></Modal>
+    </>
+  );
 }
-
 export default LoginForm
+

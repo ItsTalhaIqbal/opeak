@@ -1,46 +1,16 @@
 
-
-
-
-// const About = ({ isVisible, onClose }) => {
-//   const handleClick = (e) => {
-//     if (e.target.id === "about") {
-//       onClose()
-//     }
-//   }
-
-//   if (!isVisible) return null;
-//   return (
-
-//     <div className='fixed inset-0  bg-black bg-opacity-25 backdrop-blur-sm' id="about" onClick={handleClick}>
-//       <div className='bg-white rounded-lg  ml-auto mr-auto mt-[150px]  w-[70%] h-auto'>
-//         <div className='w-full   flex space-x-auto b'>
-//           <h2>Contact Us</h2>
-//           <Button onClick={() => onClose(false)} className='button text-black'> X </Button>
-//         </div>
-        
-          
-       
-//       </div>
-//     </div>
-//   )
-// };
-
-
-
-
 import Link from 'next/link';
 import { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 
-function About() {
+function Accessories() {
 
   const [lgShow, setLgShow] = useState(false);
 
   return (
     <>
       <Link href="#" onClick={() => setLgShow(true)} className='text-color2 text-lg
-      '>About Us</Link>
+      '>Accessories</Link>
   
       <Modal
         size="xl"
@@ -50,7 +20,7 @@ function About() {
       >
         <Modal.Header closeButton>
           <Modal.Title id="example-modal-sizes-title-lg">
-            About
+          Accessories
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
@@ -61,4 +31,4 @@ function About() {
   );
 }
 
-export default About;
+export default Accessories;

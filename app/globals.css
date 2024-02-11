@@ -99,16 +99,12 @@ body{
 .text-color{
   color: #9F8F87;
 }
-.b-color button:hover{
-  background-color: #24B9D7;
-}
-.ul Button:hover{
-  color:#24B9D7 ;
-  background: none;
-}
+
+
 .mapouter{
-  padding-left: 100px;
-  padding-right: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
   text-align:right;
   height:400px;
   width:100%;
@@ -120,11 +116,16 @@ body{
   width:100%;}
   .b-bottum{
     border: none;
-    border-bottom:2px solid #9F8F87;
+    border-top:2px solid #9F8F87;
   }
   
 .text-color2{
-  color: #24B9D7;
+  text-decoration: none;
+   color: white;
+}
+.text-color2 :hover{
+color: #24B9D7;
+ 
 }
 .bg :hover{
     background-color: #24B9D7;
@@ -134,10 +135,8 @@ body{
   border: none;
   border-bottom: 1px solid gray;
 }
-.button{
-  background: none;
-}
-.button :hover{
-  background: none;
-  color: #24B9D7;
+
+
+.layout-bg{
+  background-color: #464955;
 }

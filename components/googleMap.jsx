@@ -2,7 +2,7 @@
 import React from 'react';
 
 const GoogleMap = () => (
-  <div className="mapouter mt-3">
+  <div className="mapouter ">
     <div className="gmap_canvas">
       <iframe
         width="100%"

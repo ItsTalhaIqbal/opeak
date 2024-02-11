@@ -1,65 +1,78 @@
 "use client"
 import Image from 'next/image'
 import Link from 'next/link'
-import React, { useState } from 'react'
-import { Button } from './ui/button'
-import About from './about'
+import About from './About'
 import LoginForm from './LoginForm'
 import Contact from './Contact'
+import Accessories from './Accessories'
+import Bikes from './Bikes'
 
 
 const Navbar = () => {
-  const [showAbout, setShowAbout] = useState(false)
-  const [showLogin, setShowLogin] = useState(false)
-  const [showContact,setShowContact]=useState(false)
+
 
 
   return (
     <>
-      <nav className='w-full flex bg-color p-4 fixed '>
-        <div className='w-[200px] h-13  mt-3  lg:ml-[100px] sm:ml-0 mx-0'>
-
+      <nav className='w-full  bg-color p-2  h-auto'>
+        <div className=' flex w-auto max-w-[1400px] ml-auto mr-auto b'>
           <Link href='/'>
             <Image
-              src='/logo.jpg'
+              src='/logo-opeak.png'
               alt='Opeak Logo'
-              height={150}
+              height={300}
               width={600}
+              className='w-auto h-auto mt-2'
             />
           </Link>
-        </div>
-
-        <div className=' flex  md:ml-auto  lg:ml-auto mr-[100px] '>
-          <ul className=' hidden md:flex text-white font-bold gap-8 py-4 ml-10 ul mr-[50px] '>
-            <Button href='/bikes' className='button'>Bikes</Button>
-            <Button href='/accessories' className='button'>ACCESSORIES</Button>
-            <Button onClick={() => setShowAbout(true)} className='button'>ABOUT US</Button>
-            <Button onClick={()=>setShowContact(true)} className='button'>CONTACT</Button>
+          <ul className=' hidden md:flex text-white    ml-auto mr-5 mb-0 w-auto gap-5 h-auto b'>
+            <li className='mt-auto'><Bikes/></li>
+            <li className='mt-auto'><Accessories/></li>
+            <li className='mt-auto'><About/></li>
+            <li className='mt-auto'><Contact/></li>
           </ul>
-          <div className=' hidden md:block w-[40px]'>
+
+
+
+          
+          <Link href='#' className='b'>
             <Image
               src="/bucket.png"
               height={10}
               width={25}
               alt='bucket'
-              className='h-5 w-6 mt-4 ml-3'
+              className='h-5 w-6 mt-6 ml-2 mr-2  '
             />
-          </div>
+          </Link>
+          {/* responsive */}
+          {/* <div className='hidden md:h-full w-auto'>
+            <div className=' h-auto'>
+              <Image
+                src='/2nd-logo.png'
+                alt='2nd-logo'
+                height={10}
+                width={200}
+                className='h-[100px] w-[250px] ml-auto mr-auto mt-11' />
+              <div className=' w-full flex'>
+                <ul className=' flex text-white  gap-7 mt-5  ul  ml-auto mr-auto  '>
+                  <NavItem href='/bikes'>Bikes</NavItem>
+                  <NavItem href='/accessories'>ACCESSORIES</NavItem>
+                  <NavItem href='/about'>ABOUT US</NavItem>
+                  <NavItem href='/contact'>CONTACT</NavItem>
+                </ul>
+              </div>
+            </div>
+          </div> */}
 
-          <div className=''>
-            {/* Add a responsive menu button here */}
-          </div>
+          <div className=' hidden md:block   mr-none b'>
+            <LoginForm />
 
-          <div className=' hidden md:block   mr-none'>
-            <Button
-              className="rounded-[10px] mt-2 b-color w-[90px]"
-              onClick={() => setShowLogin(true)}>Login</Button>
           </div>
         </div>
-      </nav>
-      <About isVisible={showAbout} onClose={setShowAbout} />
-      <LoginForm isVisible={showLogin} onClose={setShowLogin}/>
-      <Contact isVisible={showContact} onClose={setShowContact}/>
+
+
+      </nav >
+
     </>
   )
 }
