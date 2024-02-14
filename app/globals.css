@@ -97,6 +97,7 @@ body{
   background-color: #9F8F87;
 }
 .text-color{
+  text-decoration: none;
   color: #9F8F87;
 }
 
@@ -139,4 +140,28 @@ color: #24B9D7;
 
 .layout-bg{
   background-color: #464955;
+}
+.order-div{
+  border: none;
+  border-bottom: 2px solid black;
+}
+.ul li :hover{
+  color:  #24B9D7; 
+}
+.text-color3{
+  color: #9F8F87;
+}
+.order-items{
+  display: inline-block;
+  text-decoration: none;
+  border: 2px solid #9F8F87;
+ 
+  background-color: #DADDE2;
+}
+.order-items1{
+  background-color: #9F8F87;
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+
 }

@@ -4,9 +4,8 @@ import Link from 'next/link'
 import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-import SignUp from './SignUp';
 
-function LoginForm() {
+function SignUp() {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -14,10 +13,7 @@ function LoginForm() {
 
   return (
     <>
-      <Button className='bg-color' onClick={handleShow}>
-        Login
-      </Button>
-
+      <Link href='#' className='text-color text-center' onClick={handleShow}>No account? Create one here</Link>
       <Modal show={show} onHide={handleClose}>
       <Modal.Header closeButton></Modal.Header>
                 <Modal.Body>
@@ -25,16 +21,16 @@ function LoginForm() {
   <div className='bg-white rounded-lg p-4 '>
     
     <div className='w-[450px]  flex flex-col justify-center items-center'>
-      <Input className='mb-4 w-64' placeholder='Username' />
-      <Input className='mb-4 w-64' type='password' placeholder='Password' />
-      <Link href='#' className='text-color mb-4'>Forgot your password?</Link>
+      <Input className='mb-4 w-64' placeholder='NAME' type="text" />
+      <Input className='mb-4 w-64' placeholder='Email' type="email"/>
+      <Input className='mb-4 w-64'  placeholder='Password' type='password'/>
       <Button className='w-64'>SIGN IN</Button>
-      <SignUp onClick={handleClose}/>
+      <Link href='#' className='text-color text-center'>Login</Link>
     </div>
   </div>
 </div></Modal.Body></Modal>
     </>
   );
 }
-export default LoginForm
+export default SignUp
 

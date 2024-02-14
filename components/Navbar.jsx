@@ -14,34 +14,34 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className='w-full  bg-color p-2  h-auto'>
-        <div className=' flex w-auto max-w-[1400px] ml-auto mr-auto b'>
+      <nav className='w-full  bg-color p-2  h-[80px]'>
+        <div className=' flex w-auto max-w-[1310px] ml-auto mr-auto '>
           <Link href='/'>
             <Image
               src='/logo-opeak.png'
               alt='Opeak Logo'
-              height={300}
-              width={600}
+              height={46}
+              width={304}
               className='w-auto h-auto mt-2'
             />
           </Link>
-          <ul className=' hidden md:flex text-white    ml-auto mr-5 mb-0 w-auto gap-5 h-auto b'>
-            <li className='mt-auto'><Bikes/></li>
-            <li className='mt-auto'><Accessories/></li>
-            <li className='mt-auto'><About/></li>
-            <li className='mt-auto'><Contact/></li>
+          <ul className=' hidden md:flex text-white    ml-auto mr-5 mb-0 w-auto gap-5 h-auto '>
+            <li className='mt-auto font-bold'><Bikes/></li>
+            <li className='mt-auto font-bold'><Accessories/></li>
+            <li className='mt-auto font-bold'><About/></li>
+            <li className='mt-auto font-bold'><Contact/></li>
           </ul>
 
 
 
           
-          <Link href='#' className='b'>
+          <Link href='# ' className='b rounded-full h-8 w-8'>
             <Image
               src="/bucket.png"
-              height={10}
-              width={25}
+              height={20}
+              width={20}
               alt='bucket'
-              className='h-5 w-6 mt-6 ml-2 mr-2  '
+              className='ml-1 mt-1'
             />
           </Link>
           {/* responsive */}
@@ -64,7 +64,7 @@ const Navbar = () => {
             </div>
           </div> */}
 
-          <div className=' hidden md:block   mr-none b'>
+          <div className=' hidden md:block   mr-none '>
             <LoginForm />
 
           </div>
