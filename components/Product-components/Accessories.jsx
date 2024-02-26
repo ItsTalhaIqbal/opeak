@@ -45,7 +45,7 @@ const Accessories = () => {
             </div>
           </div>
           <div className="h-ful w-full ">
-          <div className="w-full h-[250px] b">
+          <div className="w-full h-[250px] border border-white">
             <h2 className="ml-[100px] mt-[100px]"> <span className="text-color3 text-lg">As low as: </span><span className="text-4xl font-bold ">$999.00</span></h2>
             <div className="flex ml-[100px] mt-11">
               <MdStar />
@@ -80,8 +80,8 @@ const Accessories = () => {
               </div>
               <div className='h-full w-auto  ml-5'>
                 <p>QTY</p>
-                <select name="qty" class=" border border-slate-900 rounded-full w-[10s0px] h-[25px]">
-                  <option value="qty" class="hidden">Quantity</option>
+                <select name="qty" className=" border border-slate-900 rounded-full w-[10s0px] h-[25px]">
+                  <option value="qty" className="hidden">Quantity</option>
                   <option value="1">1</option>
                   <option value="2">2</option>
                   <option value="3">3</option>

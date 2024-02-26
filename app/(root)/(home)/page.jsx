@@ -1,22 +1,25 @@
 import Header from "@/components/Header";
 import Accessories from "@/components/Product-components/Accessories";
+import ScrollComponent from "@/components/Product-components/ScrollComponent";
+import Image from "next/image";
 import EMTB from "@/components/Product-components/EMTB";
 import EMTBFull from "@/components/Product-components/EMTBFull";
 import Imperial from "@/components/Product-components/Imperial";
 import SuperMoto from "@/components/Product-components/SuperMoto";
 import Unik from "@/components/Product-components/Unik";
-import Image from "next/image";
-import Link from "next/link";
+
+
 import React from "react";
 
 
 const Home = () => {
+
   return (
     <div className='h-full w-full '>
 
 
 
-      <div className="h-auto w-auto max-w-[1310px] ml-auto mr-auto">
+      <div className="h-auto w-auto max-w-[1310px] ml-auto mr-auto ">
         <Header />
         <div className="w-auto max-w-[1310px] h-full ml-auto mr-auto   text-center">
           <h2 className="font-bold text-4xl text-white">INTRODUCING OPEAK'S 2024 EBIKE RANGE:</h2>
@@ -25,34 +28,22 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="w-full h-auto bg-color ">
-        <h1 className="pt-4 text-center text-white font-bold text-5xl">Choose your OPEAK eBike</h1>
-        <div className="flex ml-auto mr-auto justify-center items-center mt-10 w-auto max-w-[1310px] ">
-          {[
-      
-      { src: '/choose-emtb.jpg', alt: 'Supermoto' , href: <SuperMoto /> },
-            { src: '/choose-emtbfull.jpg', alt: 'Imperial' , href: <Unik />},
-            { src: '/choose-supermoto.jpg', alt: 'U N I K' , href: <Imperial />},
-            { src: '/choose-unik.jpg', alt: 'eMTB FULL' , href: <EMTBFull />},
-            { src: '/choose-imperial.jpg', alt: 'eMTB' , href: <Accessories />},
-          ].map((item, index) => (
-            <Link key={index} href='#' className="w-full max-w-[1310px] mb-4 sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5  ">
-              <div className=" flex flex-col items-center">
-                <Image src={item.src} height={385} width={281} />
-              </div>
-            </Link>
-          ))}
-        </div>
-      </div>
-      
-       {/* Products */}
-      <SuperMoto />
-      <Unik/>
-      <Imperial/>
-      <EMTBFull/>
-      <EMTB/>
-      <Accessories/>
-    
+
+      <ScrollComponent
+        superMotoId='supermoto'
+        unikId='unik'
+        imperialId='imperial'
+        etbfullId='emtbfull'
+        emtbId='emtb'
+      />
+      {/* Other components */}
+      <SuperMoto id='supermoto' />
+      <Unik id='unik' />
+      <Imperial id='imperial' />
+      <EMTBFull id='emtbfull' />
+      <EMTB id='emtb' />
+      <Accessories />
+
       <div className="w-full h-auto  bg-white mt-20">
         <div className="h-auto w-auto max-w-[1310px]  ml-auto mr-auto">
           <Image

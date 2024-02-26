@@ -9,8 +9,8 @@ function Bikes() {
 
   return (
     <>
-      <Link href="#" onClick={() => setLgShow(true)} className='text-color2 text-lg
-      '>Bikes</Link>
+      <Link href="#" onClick={() => setLgShow(true)} className='text-color2 text-lg font-semibold
+    '>BIKES</Link>
   
       <Modal
         size="xl"
@@ -20,7 +20,7 @@ function Bikes() {
       >
         <Modal.Header closeButton>
           <Modal.Title id="example-modal-sizes-title-lg">
-          Bikes
+          BIKES
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>

@@ -9,8 +9,8 @@ function Accessories() {
 
   return (
     <>
-      <Link href="#" onClick={() => setLgShow(true)} className='text-color2 text-lg
-      '>Accessories</Link>
+      <Link href="#" onClick={() => setLgShow(true)} className='text-color2 text-lg font-semibold
+      '>ACCESSORIES</Link>
   
       <Modal
         size="xl"

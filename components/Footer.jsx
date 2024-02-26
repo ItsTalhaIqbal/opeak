@@ -1,10 +1,9 @@
 import React from 'react'
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
+import  Button  from "@/components/ui/button"
+import  Input  from "@/components/ui/input"
 import GoogleMap from './googleMap'
 import HelpForm from './HelpForm'
 import Image from 'next/image'
-import NavItem from './Navitem'
 
 
 import Link from 'next/link'
@@ -22,10 +21,10 @@ const Footer = () => {
               <Input
                 type="email"
                 placeholder="Your Email Address"
-                className="w-full md:w-[400px] lg:w-[400px] xl:w-[700px] p-2"
+                className="w-full md:w-[400px] lg:w-[400px] xl:w-[700px] p-2 bg-white"
               />
-              <Button type="submit" className="mt-2 md:mt-0 b-color">
-                Submit
+              <Button type="submit" className=" md:mt-0 b-color text-white bg-[#9F8F87] hover:bg-[#9F8F87]">
+                SUBMIT
               </Button>
             </div>
 
@@ -81,11 +80,11 @@ const Footer = () => {
             width={200}
             className='h-[100px] w-[250px] ml-auto mr-auto mt-11' />
           <div className=' w-full flex'>
-            <ul className=' flex text-white  gap-7 mt-5  ul  ml-auto mr-auto  text-color2'>
-              <NavItem href='/bikes'>Bikes</NavItem>
-              <NavItem href='/accessories'>ACCESSORIES</NavItem>
-              <NavItem href='/about'>ABOUT US</NavItem>
-              <NavItem href='/contact'>CONTACT</NavItem>
+            <ul className=' flex text-white  gap-7 mt-5  ul  ml-auto mr-auto  '>
+              <Link href='/bikes' className='text-color2'>Bikes</Link>
+              <Link href='/accessories' className='text-color2'>ACCESSORIES</Link>
+              <Link href='/about' className='text-color2'>ABOUT US</Link>
+              <Link href='/contact' className='text-color2'>CONTACT</Link>
             </ul>
           </div>
         </div>

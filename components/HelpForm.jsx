@@ -1,8 +1,8 @@
 "use client"
 
 import { useState } from 'react';
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
+import  Button from "@/components/ui/button"
+import  Input  from "@/components/ui/input"
 
 function HelpForm() {
   const [name, setName] = useState('');
@@ -24,25 +24,25 @@ function HelpForm() {
             placeholder='Name'
             value={name}
             onChange={(e) => setName(e.target.value)}
-            className="w-[400px] ml-9 mt-4 self-end xl:w-[500px] focus:outline-none mr-3 rounded-none"
+            className="w-[400px] ml-9 mt-4 self-end xl:w-[500px] focus:outline-none mr-3 rounded-none bg-white"
           />
           <Input
             type='email'
-            placeholder='your@email.com'
+            placeholder='Email'
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="w-[400px] ml-9 mt-4 self-end xl:w-[500px] focus:outline-none mr-3 rounded-none"
+            className="w-[400px] ml-9 mt-4 self-end xl:w-[500px] focus:outline-none mr-3 rounded-none bg-white"
           />
           <textarea
             placeholder='How can we help?'
             value={description}
             onChange={(e) => setDescription(e.target.value)}
-            className="w-[400px] h-[100px] ml-9 mt-4 mr-3 resize-none border border-gray-300  p-2 self-end focus:outline-none focus:border-blue-500 xl:w-[500px] rounded-none"
+            className="w-[400px] h-[100px] ml-9 mt-4 mr-3 resize-none border border-gray-300  p-2 self-end  focus:border-blue-500 xl:w-[500px] rounded-none"
           />
         
         <div className='h-auto w-auto '>
-          <Button type="button" onClick={handleSubmit} className="mt-2  b-color align-start ml-9 rounded-none">
-            Submit
+          <Button type="button" onClick={handleSubmit} className=" bg-[#9F8F87] text-white mt-2  b-color align-start ml-9 rounded-none hover:bg-[#9F8F87]">
+            SUBMIT
           </Button>
         </div>
      </div>

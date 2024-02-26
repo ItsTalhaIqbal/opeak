@@ -12,8 +12,8 @@ function Contact() {
     return (
         <>
            
-        <Link href="#" onClick={handleShow} className='text-color2 text-lg
- '>Contact</Link>
+        <Link href="#" onClick={handleShow} className='text-color2 text-lg font-semibold
+ '>CONTACT</Link>
             <Modal 
     show={show} 
     onHide={handleClose} 

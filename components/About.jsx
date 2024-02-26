@@ -39,8 +39,8 @@ function About() {
 
   return (
     <>
-      <Link href="#" onClick={() => setLgShow(true)} className='text-color2 text-lg
-      '>About Us</Link>
+      <Link href="#" onClick={() => setLgShow(true)} className='text-color2 text-lg font-semibold
+      '>ABOUT US</Link>
   
       <Modal
         size="xl"
