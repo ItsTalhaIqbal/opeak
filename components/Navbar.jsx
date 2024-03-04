@@ -1,69 +1,75 @@
 "use client"
-import React, { useState } from 'react';
+import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import About from './About';
-import LoginForm from './LoginForm';
+import LoginForm from './Login-Signup';
 import Contact from './Contact';
 import Accessories from './Accessories';
 import Bikes from './Bikes';
 import Cart from './cart';
 
 const Navbar = () => {
-  const [status, setStatus] = useState(false);
-
-  const toggleStatus = () => {
-    setStatus(!status);
-  };
-
   return (
-    <nav className='w-full bg-color p-2 h-[90px] px-5 py-8' >
-      <div className='flex w-auto max-w-[1310px] ml-auto mr-auto'>
-        <Link href='/'>
+    <nav className='w-full bg-color p-2 px-5 py-8 lg:h-[80px]'>
+      <div className='flex justify-between items-center max-w-[1310px] mx-auto mt-2 '>
+        <Link href='/' className=' hidden lg:block '>
           <Image
             src='/logo-opeak.png'
             alt='Opeak Logo'
             height={46}
             width={304}
-            className='w-auto h-auto mt-2'
-            onClick={toggleStatus}
+            className='cursor-pointer '
           />
         </Link>
-        <ul className='hidden md:flex ml-auto mr-5 mb-0 w-auto gap-5 h-auto '>
-          <li className='mt-auto font-semibold'><Bikes /></li>
-          <li className='mt-auto font-bold'><Accessories /></li>
-          <li className='mt-auto font-bold'><About /></li>
-          <li className='mt-auto font-bold'><Contact /></li>
+        {/* Desktop Menu */}
+        <ul className='hidden lg:flex gap-5  ml-auto mr-5 my-auto md:gap-3'>
+          <li><Bikes /></li>
+          <li><Accessories /></li>
+          <li><About /></li>
+          <li><Contact /></li>
         </ul>
 
-        <Cart />
-        {/* <div className='hidden 
-          md:h-full w-auto'>
-          <div className=' h-auto'>
-            <Image
-              src='/2nd-logo.png'
-              alt='2nd-logo'
-              height={10}
-              width={200}
-              className='h-[100px] w-[250px] ml-auto mr-auto mt-11' />
-            <div className=' w-full flex'>
-              <ul className=' flex text-white  gap-7 mt-5  ul  ml-auto mr-auto  '>
-                <NavItem href='/bikes'>Bikes</NavItem>
-                <NavItem href='/accessories'>ACCESSORIES</NavItem>
-                <NavItem href='/about'>ABOUT US</NavItem>
-                <NavItem href='/contact'>CONTACT</NavItem>
-              </ul>
+        {/* Mobile Menu */}
+        <div className='w-full h-auto lg:hidden'>
+          <div className='flex  w-[200px] ml-auto '>
+            <Cart />
+            <LoginForm />
+
+          </div>
+
+          <Image
+            src='/2nd-logo.png'
+            alt='2nd-logo'
+            height={50}
+            width={200}
+            className='mx-auto mt-3'
+          />
+
+          <ul className=' w-auto flex justify-center  text-white gap-4 mt-3 font-bold text-lg '>
+            <li ><Bikes /></li>
+            <li ><Accessories /></li>
+            <li ><About /></li>
+            <li ><Contact /></li>
+          </ul>
+
+
+        </div>
+
+        {/* Login Form */}
+        <div className='hidden lg:block '>
+          <div className="flex w-auto">
+            <Cart />
+            <div className=' my-auto'>
+              <LoginForm />
             </div>
           </div>
-        </div> */}
-
-        <div className='hidden md:block mr-none w-[100px] mt-3 '>
-          <LoginForm />
         </div>
+
+
       </div>
     </nav>
   );
 };
 
 export default Navbar;
-

@@ -9,7 +9,7 @@ function Bikes() {
 
   return (
     <>
-      <Link href="#" onClick={() => setLgShow(true)} className='text-color2 text-lg font-semibold
+      <Link href="#" onClick={() => setLgShow(true)} className='text-color2 text-sm lg:text-lg lg:font-semibold
     '>BIKES</Link>
   
       <Modal
