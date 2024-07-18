@@ -22,7 +22,7 @@ const FeatureProducts = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get('http://localhost:8000/api/feature');
+        const res = await axios.get(`${baseURL}/api/feature`);
         const data = res.data;
         // Filter the data first and then map over the filtered results
         const bike = data

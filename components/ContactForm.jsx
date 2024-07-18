@@ -17,7 +17,7 @@ function ContactForm() {
         return;
       }
       const data = { name, email, description };
-      const res = await axios.post("http://localhost:8000/api/message", data);
+      const res = await axios.post(`${baseURL}/api/message`, data);
       setName('');
       setEmail('');
       setDescription('');

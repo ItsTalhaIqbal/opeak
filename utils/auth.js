@@ -26,7 +26,7 @@ export const isLogin = async () => {
   const token = getCookie("token");
 
   if (token) {
-    const res = await axios.post(`${baseURL}/auth`, { token });
+    const res = await axios.post(`${baseURL}/api/auth`, { token });
     return res.data;
   }
   return false;

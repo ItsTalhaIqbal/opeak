@@ -6,6 +6,7 @@ import React, { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { useDispatch } from 'react-redux'
 import { addToCart } from '@/redux/cartSlice'
+import { baseURL } from '@/constants/constant'
 
 const Accessories = () => {
   const [accessories, setAccessories] = useState([])
@@ -33,7 +34,7 @@ const Accessories = () => {
   useEffect(() => {
     (async () => {
       try {
-        const res = await axios.get('http://localhost:8000/api/product');
+        const res = await axios.get(`${baseURL}/api/product`);
         const data = res.data;
 
         const filteredAccessories = data

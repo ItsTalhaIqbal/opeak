@@ -48,7 +48,7 @@ console.log(cart);
     e.preventDefault();
 
     try {
-      const response = await axios.post('http://localhost:8000/api/checkout', {
+      const response = await axios.post(`${baseURL}/api/checkout`, {
         name,
         email,
         city,

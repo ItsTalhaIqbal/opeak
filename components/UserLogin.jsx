@@ -27,7 +27,7 @@ function UserLogin() {
     };
 
     try {
-      const res = await axios.post(`${baseURL}/login`, payload);
+      const res = await axios.post(`${baseURL}/api/login`, payload);
       setAuthentication(res.data.token);
       toast.success("Login Successful");
       setEmail(''),
@@ -49,7 +49,7 @@ function UserLogin() {
     };
 
     try {
-      await axios.post(`${baseURL}/signup`, payload);
+      await axios.post(`${baseURL}/api/signup`, payload);
       toast.success(
         <div>
           Account Created Successfully <br /> Please Login in

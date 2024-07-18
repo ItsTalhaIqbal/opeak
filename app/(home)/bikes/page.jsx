@@ -36,7 +36,7 @@ const Product = () => {
   useEffect(() => {
     (async () => {
       try {
-        const res = await axios.get('http://localhost:8000/api/product');
+        const res = await axios.get(`${baseURL}/api/product`);
         const data = res.data;
         console.log("Data from API:", data); // Debugging line
 
