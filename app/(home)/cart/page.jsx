@@ -7,6 +7,7 @@ import { decrementQuantity, incrementQuantity, removeFromCart, clearCart } from 
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import Link from 'next/link';
+import { baseURL } from '@/utils/constant';
 
 const CartPage = () => {
   const cart = useSelector(state => state.cart.items);

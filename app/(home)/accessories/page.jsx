@@ -6,7 +6,7 @@ import React, { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { useDispatch } from 'react-redux'
 import { addToCart } from '@/redux/cartSlice'
-import { baseURL } from '@/constants/constant'
+import { baseURL } from '@/utils/constant'
 
 const Accessories = () => {
   const [accessories, setAccessories] = useState([])

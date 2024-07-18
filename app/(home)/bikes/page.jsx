@@ -1,6 +1,7 @@
 "use client"
 
 import { addToCart } from '@/redux/cartSlice'
+import { baseURL } from '@/utils/constant'
 import axios from 'axios'
 import Image from 'next/image'
 import Link from 'next/link'

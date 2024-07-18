@@ -7,6 +7,7 @@ import { useDispatch } from "react-redux";
 import { addToCart } from "@/redux/cartSlice";
 import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
+import { baseURL } from "@/utils/constant";
 
 const ProductPage = ({ params }) => {
   const { id } = params;

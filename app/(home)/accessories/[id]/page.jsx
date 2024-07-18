@@ -8,6 +8,7 @@ import { RiArrowDropDownLine } from "react-icons/ri";
 import { useDispatch } from "react-redux";
 import { addToCart } from "@/redux/cartSlice";
 import { toast } from 'react-toastify';
+import { baseURL } from "@/utils/constant";
 
 const ProductPage = ({ params }) => {
   const { id } = params;

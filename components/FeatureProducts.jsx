@@ -10,6 +10,7 @@ import { addToCart } from '@/redux/cartSlice';
 import axios from 'axios';
 import ScrollComponent from './ScrollComponent';
 import { toast } from 'react-toastify';
+import { baseURL } from '@/utils/constant';
 
 const FeatureProducts = () => {
   const [bikes, setBikes] = useState([]);

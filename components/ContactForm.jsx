@@ -1,5 +1,6 @@
 "use client"
 
+import { baseURL } from '@/utils/constant';
 import axios from 'axios';
 import { useState } from 'react';
 import { toast } from 'react-toastify';
