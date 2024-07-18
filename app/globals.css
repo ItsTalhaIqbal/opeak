@@ -1,7 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
- 
+
+
 
 *{
   margin: 0%;
@@ -12,6 +13,16 @@ body{
   height: 100%;
   width: 100%;
 }
+.button {
+  @apply bg-[#9F8F87] w-[110px] h-9 rounded-full text-white hover:bg-[#9F8F87];
+}
+input{
+  @apply h-9 p-2  
+}
+input :focus{
+  @apply border border-blue-500
+}
+
 .text-color1{
   color: #2B2C32;
 }
@@ -79,7 +90,7 @@ color: #24B9D7;
   color: #9F8F87;
 }
 .quantity{
-  border: 2px solid #9F8F87;
+  border: 2px solid #b8a49a;
   
 
 }
@@ -117,9 +128,7 @@ color: #24B9D7;
 
 .colors input{display:none;}
 
-.colors input[type="radio"]:checked + label > .swatch {
-  box-shadow: inset 0 0 0 2px red;
-}
+.colors input[type="radio"]:checked + .swatch{box-shadow: inset 0 0 0 2px red;}
 
 .swatch{
   display:inline-block;
@@ -127,7 +136,7 @@ color: #24B9D7;
   height: 30px;
   width:30px;
   margin: 0 5px 0 0 ;
-  border: 1px solid rgb(194, 188, 188);
+  border: 1px solid #d4d4d4;
   border-radius: 100%;
 }
 .about-apeak{
@@ -140,6 +149,23 @@ color: #24B9D7;
   border-left: 4px solid #9F8F87;
   
   border-right: 4px solid #9F8F87;
+}
+
+/* Custom styles for the accordion */
+.custom-accordion .accordion-item,
+.custom-accordion .accordion-header {
+  border: none !important;
+}
+
+.custom-accordion .accordion-button {
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+.custom-accordion .accordion-button:not(.collapsed) {
+  color: inherit;
+  background-color: transparent !important;
+  box-shadow: none !important;
 }
 
 

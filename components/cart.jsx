@@ -1,33 +1,37 @@
-import React, { useState } from 'react';
-import { IoMdClose } from "react-icons/io";
+"use client";
+
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
+import { useSelector } from 'react-redux';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 const Cart = () => {
-  const [status, setStatus] = useState(false);
+  const cart = useSelector(state => state.cart.items);
+  const [isClient, setIsClient] = useState(false);
+  const pathName = usePathname();
 
-  const toggleStatus = () => {
-    setStatus(!status);
-  };
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  if (!isClient) {
+    return null; // Render nothing on the server
+  }
 
   return (
     <div className='relative'>
-      <div className='rounded-full h-9 w-9 cart mt-2  mr-3 flex items-center justify-center'>
-        <Image
-          src="/bucket.png"
-          height={20}
-          width={20}
-          alt='bucket'
-          className='items-center'
-          onClick={toggleStatus}
-        />
-        {status && 
-          <div className=' h-auto w-[350px] bg-white absolute top-[65px] left-auto  lg:right-3 z-10 '>
-            <span className='flex justify-end mr-2 mt-2'>
-            <IoMdClose className='h-6 w-6' onClick={()=>setStatus(false)}/>
-            </span>
-            <p className='text-center font-semibold text-md mt-[20px]'>You have no item in your shopping cart</p>
-          </div>
-        }
+      <div className={`${pathName === "/cart" ? "hidden" : ""} rounded-full h-9 w-9 cart mt-2 mr-3 flex items-center justify-center`}>
+        <Link href='/cart'>
+          <Image
+            src="/bucket.png"
+            width={20}
+            height={20}
+            alt="bucket"
+            style={{ width: "auto", height: "auto" }}
+          />
+        </Link>
+        {cart.length !== 0 && <div className='bg-[#FF5501] absolute top-1 right-1 mb-1 w-6 h-6 text-center rounded-lg p-0 font-semibold'>{cart.length}</div>}
       </div>
     </div>
   );

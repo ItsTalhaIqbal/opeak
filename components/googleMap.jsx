@@ -1,8 +1,9 @@
 // components/GoogleMap.js
+import Link from 'next/link';
 import React from 'react';
 
 const GoogleMap = () => (
-  <div className="mapouter ">
+  <div  className="mapouter w-auto max-w-[1310px]  mx-auto ">
     <div className="gmap_canvas">
       <iframe
         width="100%"
@@ -14,7 +15,7 @@ const GoogleMap = () => (
         marginHeight="0"
         marginWidth="0"
       ></iframe>
-      <a href="https://2yu.co">2yu</a>
+      <Link href="https://2yu.co">2yu</Link>
       <br />
      
     </div>

@@ -1,7 +1,10 @@
+"use client"
+
 import Link from 'next/link';
 import { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
-import HelpForm from './HelpForm';
+import HelpForm from './ContactForm';
+import ContactForm from './ContactForm';
 
 function Contact() {
     const [show, setShow] = useState(false);
@@ -12,7 +15,7 @@ function Contact() {
     return (
         <>
 
-            <Link href="#" onClick={handleShow} className='text-color2 text-sm lg:text-lg lg:font-semibold'>CONTACT</Link>
+            <Link href="#" onClick={handleShow} className='text-color2 text-sm md:text-base lg:text-lg lg:font-semibold'>CONTACT</Link>
 
             <Modal
                 show={show}
@@ -26,7 +29,7 @@ function Contact() {
                 <Modal.Body>
                     <div className='h-auto flex flex-col lg:flex-row w-auto max-w-[1400px] mt-3 ml-auto mr-auto bg-color'>
                         <div className='w-full flex h-auto'>
-                            <HelpForm />
+                            <ContactForm />
                         </div>
                         <div className='w-full h-[300px] flex mt-3 '>
                             <div className='h-auto w-auto ml-5 lg:ml-[100px]  '>

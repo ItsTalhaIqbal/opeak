@@ -1,12 +1,7 @@
-"use client"
+"use client";
 import React, { useEffect } from 'react';
 import Image from "next/image";
 import Link from "next/link";
-import EMTBFull from "@/components/Product-components/EMTBFull";
-import EMTB from "@/components/Product-components/EMTB";
-import Imperial from "@/components/Product-components/Imperial";
-import SuperMoto from "@/components/Product-components/SuperMoto";
-import Unik from "@/components/Product-components/Unik";
 
 function scrollToTarget(id) {
   const target = document.getElementById(id);
@@ -70,11 +65,7 @@ function ScrollComponent() {
           </Link>
         </div>
       </div>
-      <div id='supermoto'><SuperMoto /></div>
-      <div id='unik'><Unik /></div>
-      <div id='imperial' ><Imperial/></div>
-      <div id='emtbfull'><EMTBFull  /></div>
-      <div id='emtb'><EMTB  /></div>
+     
     
       
     
