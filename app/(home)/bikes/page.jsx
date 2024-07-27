@@ -83,19 +83,21 @@ const Product = () => {
             <div className="p-4">
               <h3 className="text-lg font-semibold">{item.name}</h3>
               <p className="text-gray-600 text-sm mb-2">{item.description}</p>
-              <button
-                className='h-[30px] w-[120px] text-sm lg:w-[145px] lg:h-[40px] order-items1 rounded-full text-center font-bold-sm py-1 bg-[#9F8F87] hover:bg-[#927466] mx-2'
-                type="button"
-                onClick={() => handleBuy(item)}
-              >
-                BUY NOW
-              </button>
-              <button
-                className='h-[30px] w-[120px] text-sm lg:w-[145px] lg:h-[40px] order-items1 rounded-full text-center font-bold-sm py-1 bg-[#9F8F87] hover:bg-[#927466] mx-2'
-                type="button"
-              >
-                Add To Wish List
-              </button>
+              <div className='flex'>
+                <button 
+                  className='h-[30px] w-[120px] text-sm lg:w-[145px] lg:h-[40px] order-items1 rounded-full text-center font-bold-sm py-1 bg-[#9F8F87] hover:bg-[#927466] mx-2' 
+                  type="button" 
+                  onClick={() => handleBuy(item)}
+                >
+                  BUY NOW
+                </button>
+                <button 
+                  className='h-[30px] w-[100px] text-sm lg:w-[165px] lg:h-[40px] order-items1 rounded-full text-center font-bold-sm py-1 bg-[#9F8F87] hover:bg-[#927466] mx-2' 
+                  type="button"
+                >
+                   Wish List
+                </button>
+              </div>
             </div>
           </div>
         ))}

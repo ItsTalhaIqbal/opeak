@@ -56,7 +56,7 @@ function ContactForm() {
         className="w-[350px] h-[100px] ml-4 lg:ml-9 mt-4 mr-3 resize-none border border-gray-300 p-2 self-end focus:border-blue-500 lg:w-[450px] rounded-none"
       />
       <div className='h-auto w-auto'>
-        <button type="submit" onClick={handleSubmit} className="bg-[#9F8F87] text-white mt-7 p-2 px-3 b-color align-start ml-4 lg:ml-9 rounded-md hover:bg-[#9F8F87]">
+        <button type="submit" onClick={handleSubmit} className="bg-[#9F8F87] text-white mt-7 p-2 px-3 b-color align-start ml-4 lg:ml-9  hover:bg-[#9F8F87]">
           SUBMIT
         </button>
       </div>

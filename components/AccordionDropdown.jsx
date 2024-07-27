@@ -1,34 +1,47 @@
-import Accordion from 'react-bootstrap/Accordion';
+"use client"
+import React, { useState } from 'react';
+import { VscTriangleDown } from 'react-icons/vsc';
 
-function AlwaysOpenExample() {
+const Accordion = () => {
+  const [activeIndex, setActiveIndex] = useState(null);
+
+  const handleToggle = (index) => {
+    setActiveIndex(activeIndex === index ? null : index);
+  };
+
+  const sections = [
+    { title: 'High Performance', content: 'Details about high performance features and benefits.' },
+    { title: 'Speed and Range', content: 'Information on speed capabilities and range.' },
+    { title: 'Modes of Operation', content: 'Overview of different operational modes available.' },
+    { title: 'Comfort and Convenience', content: 'Insights into comfort and convenience features.' }
+  ];
+
   return (
-    <Accordion defaultActiveKey={['0']} alwaysOpen>
-      <Accordion.Item eventKey="0">
-        <Accordion.Header>Accordion Item #1</Accordion.Header>
-        <Accordion.Body>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
-        </Accordion.Body>
-      </Accordion.Item>
-      <Accordion.Item eventKey="1">
-        <Accordion.Header>Accordion Item #2</Accordion.Header>
-        <Accordion.Body>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
-        </Accordion.Body>
-      </Accordion.Item>
-    </Accordion>
+    <div className="w-full h-auto mb-5">
+      {sections.map((section, index) => (
+        <div key={index} className="w-full sm:w-[95%] ml-auto mr-auto mb-2 order-div">
+          <div
+            className="h-[30px] flex items-center cursor-pointer justify-between"
+            onClick={() => handleToggle(index)}
+          >
+            <h5 className="flex items-center">
+              {section.title}
+              
+            </h5>
+            <VscTriangleDown
+                className={`ml-2 transform transition-transform ${activeIndex === index ? 'rotate-180' : ''}`}
+                size={20}
+              />
+          </div>
+          {activeIndex === index && (
+            <div className="p-3 border-t border-gray-300">
+              {section.content}
+            </div>
+          )}
+        </div>
+      ))}
+    </div>
   );
-}
+};
 
-export default AlwaysOpenExample;
+export default Accordion;

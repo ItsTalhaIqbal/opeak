@@ -64,7 +64,7 @@ const Footer = () => {
             className='h-[100px] w-[250px] ml-auto mr-auto mt-11' />
           </Link>
           
-          <div className=' w-full flex mt-5  py-6'>
+          <div className=' w-full flex mt-3  py-6'>
             <ul className=' flex text-white gap-5 lg:gap-[20px]  mt-4  mx-auto  '>
               <li ><Bikes /></li>
               <li ><Accessories /></li>

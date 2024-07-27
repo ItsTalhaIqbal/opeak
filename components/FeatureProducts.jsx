@@ -11,6 +11,9 @@ import axios from 'axios';
 import ScrollComponent from './ScrollComponent';
 import { toast } from 'react-toastify';
 import { baseURL } from '@/utils/constant';
+import { useRouter } from 'next/navigation';
+import Accordion from './AccordionDropdown';
+
 
 const FeatureProducts = () => {
   const [bikes, setBikes] = useState([]);
@@ -19,6 +22,27 @@ const FeatureProducts = () => {
   const dispatch = useDispatch();
   const [property, setProperty] = useState("");
   const [quantity, setQuantity] = useState("1");
+
+const router=useRouter()
+
+
+
+  const handleBuy = (item) => {
+    if (item) {
+      const cartItem = {
+        product: {
+          _id: item.id,
+          name: item.name,
+          price: item.price,
+          images: item.images,
+        },
+        quantity,
+        property
+      };
+      dispatch(addToCart(cartItem));
+      router.push('/cart'); // Navigate to cart page after buying
+    }
+  };
 
   useEffect(() => {
     const fetchData = async () => {
@@ -85,7 +109,7 @@ const FeatureProducts = () => {
       <ScrollComponent />
 
       {bikes.map((b) => (
-        <div key={b.id} className="w-auto max-w-[1310px] h-auto ml-auto mr-auto mt-20 mb-[100px]">
+        <div key={b.id} id={b.id} className="w-auto max-w-[1310px] h-auto ml-auto mr-auto mt-20 mb-[100px]">
           <Carousel interval={null}>
             {b.images.map((i, index) => (
               <Carousel.Item key={index}>
@@ -100,18 +124,7 @@ const FeatureProducts = () => {
                 <p className="ml-5 text-lg">{b.description}</p>
               </div>
               <div className="w-full h-auto mb-5">
-                <div className="w-full sm:w-[95%] h-[30px] ml-auto mr-auto order-div">
-                  <h5>High Performance</h5>
-                </div>
-                <div className="w-full sm:w-[95%] h-[30px] ml-auto mr-auto order-div">
-                  <h5>Speed and Range</h5>
-                </div>
-                <div className="w-full sm:w-[95%] h-[30px] ml-auto mr-auto order-div">
-                  <h5>Modes of Operation</h5>
-                </div>
-                <div className="w-full sm:w-[95%] h-[30px] ml-auto mr-auto order-div">
-                  <h5>Comfort and Convenience</h5>
-                </div>
+              <Accordion/>
               </div>
             </div>
             <div className="h-[330px] lg:h-full w-full">
@@ -129,12 +142,12 @@ const FeatureProducts = () => {
                 </div>
               </div>
               <form onSubmit={(e) => { e.preventDefault(); handleAddToCart(b); }}>
-                <div className="h-auto lg:w-full lg:h-[250px]">
+                <div className="h-auto lg:w-full lg:h-[250px] ">
                   <div className="w-auto ml-3 lg:w-auto lg:ml-5 flex">
-                    <div className="h-full w-auto lg:ml-[80px]">
+                    <div className="h-full w-auto lg:ml-20 ">
                       <p>CHOICE OF COLOR</p>
-                      <div className="h-[50px] w-[150px] p-0 flex gap-1">
-                        <ul className="flex gap-3">
+                      <div className="h-[50px] w-[150px] ">
+                        <ul className="flex gap-3 ml-0">
                           {b.properties.map((c) =>
                             c.value.map((value) => (
                               <span key={value} className="swatch">
@@ -182,7 +195,7 @@ const FeatureProducts = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="h-auto w-auto ml-3 lg:w-[450px] flex lg:ml-[100px] gap-2">
+                  <div className="h-auto w-auto ml-3 lg:w-[450px] flex lg:ml-[100px] gap-2 mt-9 mb-4">
                     <Link href={'https://www.amazon.com/OPEAK-Foldable-Electric-Removable-Battery/dp/B08X39LWB6?th=1&psc=1'}>
                       <div className="h-[30px] w-[100px] lg:h-[40px] lg:w-[145px] ml-auto rounded-full">
                         <Image src={'/img-amazon.png'} height={1050} width={300} className="h-[30px] lg:w-[145px] lg:h-[40px] w-[145px] rounded-full" />
@@ -191,6 +204,13 @@ const FeatureProducts = () => {
                     <button className="h-[30px] w-[140px] text-sm lg:w-[145px] lg:h-[40px] order-items rounded-full text-center text-black bg-[#D9D9D9]" type="submit">
                       ADD TO CART
                     </button>
+                    <button
+                className='h-[30px] w-[120px] text-sm lg:w-[145px] lg:h-[40px] order-items1 rounded-full text-center font-bold-sm py-1 bg-[#9F8F87] hover:bg-[#927466] mx-2'
+                type="button"
+                onClick={() => handleBuy(b)}
+              >
+                BUY NOW
+              </button>
                   </div>
                 </div>
               </form>
@@ -214,18 +234,7 @@ const FeatureProducts = () => {
           <p className="ml-5 text-lg">{a.description}</p>
         </div>
         <div className="w-full h-auto mb-5">
-          <div className="w-full sm:w-[95%] h-[30px] ml-auto mr-auto order-div">
-            <h5>High Performance</h5>
-          </div>
-          <div className="w-full sm:w-[95%] h-[30px] ml-auto mr-auto order-div">
-            <h5>Speed and Range</h5>
-          </div>
-          <div className="w-full sm:w-[95%] h-[30px] ml-auto mr-auto order-div">
-            <h5>Modes of Operation</h5>
-          </div>
-          <div className="w-full sm:w-[95%] h-[30px] ml-auto mr-auto order-div">
-            <h5>Comfort and Convenience</h5>
-          </div>
+          <Accordion/>
         </div>
       </div>
       <div className="h-[330px] lg:h-full w-full">
@@ -276,7 +285,6 @@ const FeatureProducts = () => {
                     value={quantity}
                     onChange={(e) => handleQuantityChange(e.target.value)}
                   >
-                    <option value="" disabled>Quantity</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -291,7 +299,7 @@ const FeatureProducts = () => {
                 </div>
               </div>
             </div>
-            <div className="h-auto mt-7 w-auto ml-3 lg:w-[450px] flex lg:ml-[100px] gap-2">
+            <div className="h-auto mt-7 w-auto ml-3 lg:w-[450px] flex lg:ml-[100px] gap-2 mt-9 mb-4">
             <Link href={'https://www.amazon.com/OPEAK-Foldable-Electric-Removable-Battery/dp/B08X39LWB6?th=1&psc=1'}>
                       <div className="h-[30px] w-[100px] lg:h-[40px] lg:w-[145px] ml-auto rounded-full">
                         <Image src={'/img-amazon.png'} height={1050} width={300} className="h-[30px] lg:w-[145px] lg:h-[40px] w-[145px] rounded-full" />
@@ -299,6 +307,13 @@ const FeatureProducts = () => {
                     </Link>
               <button className="h-[30px] w-[140px] lg:w-[145px] lg:h-[40px] order-items rounded-full text-center text-black bg-[#D9D9D9] hover:bg-[#BEBEBE] focus:outline-none" type="submit">
                 ADD TO CART
+              </button>
+              <button
+                className='h-[30px] w-[120px] text-sm lg:w-[145px] lg:h-[40px] order-items1 rounded-full text-center font-bold-sm py-1 bg-[#9F8F87] hover:bg-[#927466] mx-2'
+                type="button"
+                onClick={() => handleBuy(a)}
+              >
+                BUY NOW
               </button>
             </div>
           </div>

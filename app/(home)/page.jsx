@@ -27,6 +27,7 @@ const HomePage = () => {
             <div className="flex ">
               <div className=" h-[490px] w-full">
                 <Image src="/opeak-about-1.jpg"
+                alt="About Us"
                   height={125}
                   width={126}
                   className="ml-auto mr-auto mt-3" />
@@ -100,16 +101,16 @@ const HomePage = () => {
       <div className='h-full w-full layout-bg'>
         <div className='w-auto max-w-[1400px] ml-auto mr-auto'>
           <h2 className='text-center pt-8 font-bold text-white text-2xl lg:text-5xl'>Keep in touch</h2>
-          <p className='text-center text-color text-sm lg:text-lg mt-2'>Sign up to get the latest on sales, new releases, and more..</p>
-          <div className="flex items-center md:flex-row md:justify-center md:space-x-2 mt-5 p-4">
+          <p className='text-center text-color text-sm lg:text-xl mt-2'>Sign up to get the latest on sales, new releases, and more..</p>
+          <div className="flex items-center ml-4 space-x-3 md:flex-row md:justify-center md:space-x-2 mt-3 p-4">
             <input
               type="email"
               placeholder="Your Email Address"
-              className="w-[250px] lg:w-[400px] xl:w-[700px] p-2 bg-white border border-gray-300 rounded shadow-sm focus:ring-2 focus:ring-[#9F8F87] focus:outline-none"
+              className="w-[250px] lg:w-[400px] xl:w-[700px] p-2 bg-white border border-gray-300  shadow-sm focus:ring-2 focus:ring-[#9F8F87] focus:outline-none"
             />
             <button
               type="submit"
-              className="rounded-md md:mt-0 px-6 py-2 b-color text-white bg-[#9F8F87] hover:bg-[#8A7B74] focus:outline-none focus:ring-2 focus:ring-[#9F8F87]"
+              className=" md:mt-0 px-6 py-2 b-color text-white bg-[#9F8F87] hover:bg-[#8A7B74] focus:outline-none focus:ring-2 focus:ring-[#9F8F87]"
             >
               SUBMIT
             </button>
