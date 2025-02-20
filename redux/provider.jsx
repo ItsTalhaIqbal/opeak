@@ -5,7 +5,7 @@ import store from "./store";
 
  const Providers=({children})=>{
     return(
-        <Provider >
+        <Provider store={store} >
             {children}
         </Provider>
     )
